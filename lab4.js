@@ -1,0 +1,1 @@
+console.log("Stray kids everywhere all around the world")
