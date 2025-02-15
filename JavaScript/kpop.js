@@ -1,44 +1,42 @@
 class Choreography {
-    constructor(song, group, difficulty) {
+    constructor(song, group) {
         this.song = song;
         this.group = group;
-        this.difficulty = difficulty;
     }
 
     getDetails() {
-        return `Coreografía: ${this.song} - Grupo: ${this.group} - Dificultad: ${this.difficulty}`;
+        return `${this.song} - ${this.group}`;
     }
 
-    static displayChoreographies(choreographies) {
+    static displayChoreographies(coreos) {
         let output = "<h2>Lista de Coreografías</h2><ul>";
-        choreographies.forEach(choreo => {
-            output += `<li>${choreo.getDetails()}</li>`;
+        coreos.forEach(entrada => {
+            output += `<li>${entrada.getDetails()}</li>`;
         });
         output += "</ul>";
         document.getElementById("result").innerHTML = output;
     }
 }
 
-const choreographies = [
-    new Choreography("Love Dive", "IVE", "Intermedio"),
-    new Choreography("God's Menu", "Stray Kids", "Avanzado"),
-    new Choreography("Dynamite", "BTS", "Principiante")
+const coreos = [
+    new Choreography("Love Dive", "IVE"),
+    new Choreography("God's Menu", "Stray Kids"),
+    new Choreography("Dynamite", "BTS")
 ];
 
 function addChoreography() {
-    const song = prompt("Ingrese el nombre de la canción:");
-    const group = prompt("Ingrese el nombre del grupo:");
-    const difficulty = prompt("Ingrese el nivel de dificultad (Principiante, Intermedio, Avanzado):");
+    const song = prompt("Pon el nombre de la canción:");
+    const group = prompt("Pon el nombre del grupo:");
 
-    if (song && group && difficulty) {
-        const newChoreo = new Choreography(song, group, difficulty);
-        choreographies.push(newChoreo);
-        Choreography.displayChoreographies(choreographies);
+    if (song && group) {
+        const newChoreo = new Choreography(song, group);
+        coreos.push(newChoreo);
+        Choreography.displayChoreographies(coreos);
     } else {
-        alert("Debe completar todos los campos");
+        alert("Completa todo");
     }
 }
 
 window.onload = () => {
-    Choreography.displayChoreographies(choreographies);
+    Choreography.displayChoreographies(coreos);
 };
