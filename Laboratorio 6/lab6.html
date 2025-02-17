@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Photocards</title>
+    <link rel="stylesheet" href="tienda.css"/>
+</head>
+<body>
+    <div class="container">
+        <h1>Shu Porang Porang tienda</h1>
+        
+        <nav class="link">
+            <a href="https://docs.google.com/document/d/1REsQQ5HBuGmXeoHAyk01xFgLtbQSb8NfKj5LA5bkCdQ/edit?usp=sharing">
+                Laboratorio 6 Docs
+            </a>
+        </nav>
+
+        <div class="productA">
+            <h2>Photocards de Han - $157.00 c/u</h2>
+            <label for="productA">Cantidad: </label>
+            <input type="number" id="productA" min="0" max="100" value="0">
+            <h3>Promoción:</h3>
+            <p>10% de descuento si compras 10 en adelante.</p>
+        </div>
+
+        <div class="productB">
+            <h2>Photocards de Chan - $169.00 c/u</h2>
+            <label for="productB">Cantidad: </label>
+            <input type="number" id="productB" min="0" max="100" value="0">
+            <h3>Promoción:</h3>
+            <p>5% de descuento si compras 5 en adelante.</p>
+        </div>
+
+        <div class="productC">
+            <h2>Photocards de Leeknow - $198.00 c/u</h2>
+            <label for="productC">Cantidad: </label>
+            <input type="number" id="productC" min="0" max="100" value="0">
+            <h3>Promoción:</h3>
+            <p>15% de descuento si compras 7 en adelante.</p>
+        </div>
+
+        <button ondblclick="calculateTotal()">Calcular Total</button>
+        <h3 class="click">Da doble click</h3>
+
+        <div id="result"></div>
+    </div>
+    <script src="cobro.js"></script>
+</body>
+</html>
