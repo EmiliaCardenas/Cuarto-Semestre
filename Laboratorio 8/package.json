@@ -1,0 +1,24 @@
+{
+  "name": "laboratorio-8",
+  "version": "1.0.0",
+  "description": "Laboratorio 11 Express",
+  "keywords": [
+    "Lab",
+    "11"
+  ],
+  "homepage": "https://github.com/EmiliaCardenas/Cuarto-Semestre#readme",
+  "bugs": {
+    "url": "https://github.com/EmiliaCardenas/Cuarto-Semestre/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmiliaCardenas/Cuarto-Semestre.git"
+  },
+  "license": "ISC",
+  "author": "Emilia Cardenas Lobaton",
+  "type": "commonjs",
+  "main": "funciones.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
