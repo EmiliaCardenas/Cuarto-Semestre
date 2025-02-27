@@ -8,4 +8,11 @@ router.use('/SKZ',(request, response, next) => {
     response.send("Holiwis desde una ruta /SKZ")
 });
 
+const path = require('path');
+
+router.get('/Dreamcatcher',(request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'uwu.html'));
+});
+
+
 module.exports = router;
