@@ -1,13 +1,16 @@
 const express = require('express');
 const app = express();
 
-const path = requite('path');
+const path = require('path');
 
-path.use(express.static(path.join(__dirname,'Public')));
+app.use(express.static(path.join(__dirname,'Public')));
 
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({extended: false}));
+
+app.set('view engine', 'ejs');
+app.set('views', 'views');
 
 //Middleware
 app.use((request, response, next) => {
