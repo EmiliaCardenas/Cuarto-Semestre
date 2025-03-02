@@ -27,4 +27,8 @@ app.use((request, response, next) => {
     response.send('¡Hola mundo!'); //Manda la respuesta
 });
 
+app.use((request, response) => {
+    res.status(404).send("404 - Página no encontrada");
+});
+
 app.listen(3000);
