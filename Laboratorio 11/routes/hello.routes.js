@@ -14,9 +14,9 @@ router.get('/kpopie',(request, response, next) => {
 
 const path = require('path');
 
-router.get('/Dreamcatcher',(request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'uwu.html'));
-});
+router.get('/Dreamcatcher', dreamcatcher_controller.get_dreamcatcher);
+
+const dreamcatcher_controller = require ('../controllers/_controller')
 
 router.get('/PreguntaTarea',(request, response, next) => {
     response.sendFile(path.join(__dirname, '..', 'laboratorio11.html'));
