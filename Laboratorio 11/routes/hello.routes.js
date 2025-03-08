@@ -2,7 +2,6 @@ const express = require('express');
 
 const router = express.Router();
 
-const html_header=``;
 
 //Solo en la ruta SKZ
 
@@ -14,9 +13,13 @@ router.get('/kpopie',(request, response, next) => {
 
 const path = require('path');
 
-router.get('/Dreamcatcher', dreamcatcher_controller.get_dreamcatcher);
 
-const dreamcatcher_controller = require ('../controllers/_controller')
+const todos_controller = require('../controllers/_controller.js');
+
+router.get('/Dreamcatcher', todos_controller.get_dreamcatcher);
+
+router.get('/Lab13', todos_controller.get_lab13);
+
 
 router.get('/PreguntaTarea',(request, response, next) => {
     response.sendFile(path.join(__dirname, '..', 'laboratorio11.html'));
@@ -32,25 +35,8 @@ router.use('/Ateez',(request, response, next) => {
     response.send("Halazia Hala Hala Halazia /ateez")
 });
 
-router.get('/formulario', (request, response) => {
-    response.sendFile(path.join(__dirname, '..', 'views', 'formulario.html'));
-});
+router.get('/formulario', todos_controller.formulario);
 
-router.post('/guardar-datos', (request, response) => {
-    const { nombre, mensaje } = req.body;
-
-    if (!nombre || !mensaje) {
-        return response.status(400).send("Faltan datos");
-    }
-
-    const data = `Nombre: ${nombre}\nMensaje: ${mensaje}\n---\n`;
-    
-    fs.appendFile('datos.txt', data, (err) => {
-        if (err) {
-            return res.status(500).send("Error al guardar los datos");
-        }
-        res.send("Datos guardados correctamente");
-    });
-});
+router.post('/guardar-datos', todos_controller.post);
 
 module.exports = router;
