@@ -7,7 +7,7 @@ exports.get_dreamcatcher = (request, response, next) => {
 
 exports.formulario = (request, response) => {
     response.sendFile(path.join(__dirname, '..', 'views', 'formulario.html'));
-};
+}
 
 exports.get_lab13 = (request, response) => {
     response.sendFile(path.join(__dirname, '..', 'laboratorio13.html'));
