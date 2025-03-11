@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h2>¿Qué ventajas tiene escribir el código SQL únicamente en la capa del modelo?</h2>
+    <p>Permite mejorar las separación de responsabilidades, haciendo que haya una
+        logica en la base de datos, de como la información debe ser introducida.
+        Esto genera que el mantenimiento sea más sencillo y eficaz, y que al haber
+        algun tipo de cambio, este no llegue a afectar de gran manera a lo demas.
+        Hace que el código pueda ser reutilizable, pero evitando la repeticion
+        de consultas. Hay un aumento en la seguridad, haciendo que haya menos
+        riegos de una alteración directa a la base de datos.
+    </p>
+    <h2>¿Qué es SQL injection y cómo se puede prevenir?</h2>
+    <p>Es un tipo de ataque en el que el atacante inyecta codigo SQL maligno a las consultas
+        haciendo una alteración en los datos, sin esta persona tener los permisos
+        adecuados. Esto pasa al no validar correctamente las entradas del usuario
+        generando el acceso a manipulaciones. Para evitar este tipo de ataces, en importante
+        que los parametros de las consultas sean enviados por separado y que no se concatenen.
+
+    </p>
+</body>
+</html>
