@@ -25,6 +25,14 @@ router.get('/PreguntaTarea',(request, response, next) => {
     response.sendFile(path.join(__dirname, '..', 'laboratorio11.html'));
 });
 
+router.get('/Lab17',(request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'laboratorio17.html'));
+});
+
+router.get('/Lab18',(request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'laboratorio18.html'));
+});
+
 router.use('/SKZ',(request, response, next) => {
     console.log(request.body);
     response.send("Holiwis desde una ruta /SKZ")
