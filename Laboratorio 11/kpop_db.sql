@@ -1,0 +1,9 @@
+CREATE DATABASE kpop_db;
+
+USE kpop_db;
+
+CREATE TABLE idols (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    grupo VARCHAR(100) NOT NULL
+);
