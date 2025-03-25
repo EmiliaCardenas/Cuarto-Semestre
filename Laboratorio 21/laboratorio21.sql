@@ -1,6 +1,5 @@
 use laboratorio;
-
---Problema 1
+--Problema 1.1
 SELECT 
   SUM(E.cantidad) AS SumaCantidades,
   SUM(E.cantidad * M.precio * (1 + M.impuesto)) AS ImporteTotal
@@ -9,7 +8,7 @@ FROM
 WHERE E.clave = M.clave AND
   YEAR(e.fecha) = 1997;
 
---Problema 2
+--Problema 1.2
 SELECT 
   P.razonsocial AS RazonSocial,
   COUNT(E.numero) AS NumeroDeEntregas,
@@ -22,7 +21,7 @@ WHERE
 GROUP BY 
   P.rfc;
 
---Problema 3
+--Problema 1.3
 SELECT 
   M.clave AS ClaveMaterial,
   M.descripcion AS DescripcionMaterial,
@@ -39,7 +38,7 @@ GROUP BY
 HAVING 
   AVG(E.cantidad) > 400;
 
---Problema 4
+--Problema 1.4
 SELECT 
   P.razonsocial AS RazonSocial,
   M.clave AS ClaveMaterial,
@@ -55,7 +54,7 @@ GROUP BY
 HAVING 
   AVG(E.cantidad) >= 500;
 
---Problema 5
+--Problema 1.5
 SELECT 
   P.razonsocial AS RazonSocial,
   M.clave AS ClaveMaterial,
@@ -84,7 +83,7 @@ INSERT INTO materiales (clave, descripcion, precio, impuesto) VALUES
 (4, 'Material D', 250.20, 0.15),
 (5, 'Material E', 120.00, 0.10);
 
---Problema 6
+--Problema 2.1
 SELECT 
   M.clave AS ClaveMaterial,
   M.descripcion AS DescripcionMaterial
@@ -93,7 +92,7 @@ FROM
 WHERE 
   M.clave NOT IN (SELECT E.clave FROM Entregan E);
 
---Problema 7
+--Problema 2.2
 SELECT 
   P.razonsocial AS RazonSocial
 FROM 
@@ -108,7 +107,7 @@ WHERE
     HAVING COUNT(DISTINCT PR.denominacion) = 2
   );
 
---Problema 8
+--Problema 2.3
 SELECT 
   M.descripcion AS DescripcionMaterial
 FROM 
@@ -121,7 +120,7 @@ WHERE
     WHERE PR.denominacion = 'CIT Yucatán'
   );
 
---Problema 9
+--Problema 2.4
 SELECT 
   P.razonsocial AS RazonSocial,
   AVG(E.cantidad) AS PromedioCantidadEntregada
@@ -138,7 +137,7 @@ HAVING
     WHERE E2.rfc = 'VAGO780901'
   );
 
---Problema 10
+--Problema 2.5
 SELECT 
   P.rfc AS RFC,
   P.razonsocial AS RazonSocial
