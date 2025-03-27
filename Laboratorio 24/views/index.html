@@ -20,5 +20,36 @@
     <button id="mi_boton">Enviar Petición AJAX</button>
 
     <p id="respuesta"></p>
+
+    <h2>¿Qué importancia tiene AJAX en el desarrollo de RIA's (Rich Internet Applications)?</h2>
+    <p>AJAX (Asynchronous JavaScript and XML) es fundamental en el desarrollo de RIA's porque permite 
+        la actualización dinámica de páginas web sin necesidad de recargar toda la página. Esto mejora 
+        la experiencia del usuario, haciendo que las aplicaciones web sean más interactivas y rápidas, 
+        sin interrupciones visuales, lo que da la sensación de una aplicación de escritorio.
+    </p>
+    <h2>¿Qué implicaciones de seguridad tiene AJAX? ¿Dónde se deben hacer las validaciones de seguridad, del lado del cliente o del lado del servidor?</h2>
+    <p> - Exposición de datos sensibles: Al hacer solicitudes asíncronas a servidores, los datos transmitidos 
+        pueden ser interceptados si no se usan medidas de seguridad adecuadas como HTTPS.
+
+        - Cross-Site Scripting (XSS): Si los datos recibidos del servidor no se manejan correctamente 
+        (por ejemplo, al inyectar datos directamente en la interfaz sin filtrado adecuado), pueden ser utilizados 
+        para ejecutar código malicioso en el navegador.
+        
+        - Cross-Site Request Forgery (CSRF): Si no se implementan mecanismos adecuados de autenticación y validación,
+         un atacante podría intentar realizar solicitudes maliciosas en nombre de un usuario autenticado.
+    </p>
+    <h2>¿Qué es JSON?</h2>
+    <p> - Del lado del cliente: Si bien las validaciones del lado del cliente son útiles para mejorar la
+         experiencia de usuario, no son confiables para la seguridad. Los usuarios pueden modificar el 
+         código JavaScript o deshabilitarlo por completo.
+
+        - Del lado del servidor: Aquí es donde deben hacerse todas las validaciones críticas de seguridad. 
+        El servidor es el único que tiene control total sobre los datos y la lógica de negocio, por lo que debe:
+        Validar y sanitizar todas las entradas para evitar inyecciones SQL y XSS.
+        Implementar autenticación y autorización adecuadas.
+        Usar tokens CSRF para evitar ataques de falsificación de solicitudes.
+        Restringir el acceso a la API mediante CORS (Cross-Origin Resource Sharing), permitiendo solo solicitudes de orígenes confiables.
+    </p>
+
 </body>
 </html>
