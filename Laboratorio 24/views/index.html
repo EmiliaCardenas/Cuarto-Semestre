@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subir Archivo</title>
+    <script defer src="/public/js/acciones.js"></script> <!-- Cargar el script -->
+</head>
+<body>
+    <h2>Subir un Archivo</h2>
+    <form action="/archivo" method="POST" enctype="multipart/form-data">
+        <input type="file" name="archivo" required>
+        <button type="submit">Subir Archivo</button>
+    </form>
+
+    <hr>
+
+    <h2>Prueba de AJAX</h2>
+    <input type="text" id="mensaje" placeholder="Escribe un mensaje">
+    <button id="mi_boton">Enviar Petición AJAX</button>
+
+    <p id="respuesta"></p>
+</body>
+</html>
