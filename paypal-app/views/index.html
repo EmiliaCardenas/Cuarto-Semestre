@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pago con PayPal</title>
+</head>
+<body>
+  <h1>Integración PayPal</h1>
+  <button id="pagar">Crear Orden</button>
+  <pre id="respuesta"></pre>
+
+  <script>
+    document.getElementById('pagar').addEventListener('click', async () => {
+      const res = await fetch('/crear-orden', { method: 'POST' });
+      const data = await res.json();
+      document.getElementById('respuesta').textContent = JSON.stringify(data, null, 2);
+    });
+  </script>
+  <hr>
+  <h2>Preguntas:</h2>
+  <ul>
+    <li><strong>¿Qué API seleccionaste?</strong> PayPal REST API.</li>
+    <li><strong>¿Qué información obtienes del API?</strong> Se obtiene un ID de orden de pago que puede ser usado para capturar dinero.</li>
+    <li><strong>¿Cómo integraste la respuesta en tu aplicación web?</strong> Usando Express para hacer llamadas HTTP a PayPal, y luego mostrar los datos con HTML y JavaScript.</li>
+    <li><strong>¿Qué retos enfrentaste al consumir el API?</strong> Configuración de credenciales y entender cómo funciona el flujo de autorización.</li>
+    <li><strong>¿Qué aprendiste al hacerlo?</strong> Cómo autenticarme con OAuth2 y crear pagos con la API de PayPal usando el entorno sandbox.</li>
+  </ul>  
+  <hr>
+<h2>Ventajas y Desventajas de integrar servicios web de terceros</h2>
+<h3>Ventajas:</h3>
+<ul>
+  <li>Permite ahorrar tiempo de desarrollo al reutilizar funcionalidades ya hechas.</li>
+  <li>Acceso a tecnologías avanzadas (como pagos, mapas, autenticación) sin tener que implementarlas desde cero.</li>
+  <li>Actualizaciones y mantenimiento corren por cuenta del proveedor del API.</li>
+  <li>Escalabilidad: muchos servicios están preparados para alto tráfico.</li>
+</ul>
+
+<h3>Desventajas:</h3>
+<ul>
+  <li>Dependencia de un tercero: si el API deja de funcionar, tu app puede verse afectada.</li>
+  <li>Limitaciones de uso (cuotas, restricciones de sandbox, etc.).</li>
+  <li>Requiere comprender bien la documentación del API.</li>
+  <li>Posibles costos adicionales si se excede el uso gratuito.</li>
+</ul>
+
+</body>
+</html>
