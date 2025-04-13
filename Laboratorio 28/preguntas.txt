@@ -1,0 +1,23 @@
+¿Qué utilidad tiene un trigger (ventajas)?
+
+Un trigger (o disparador) es un bloque de código SQL que se ejecuta automáticamente en respuesta a ciertos eventos sobre una tabla o vista, como una inserción (`INSERT`), actualización (`UPDATE`) o eliminación (`DELETE`). Las principales ventajas de usar triggers son:
+- **Automatización de tareas**: Permiten ejecutar acciones automáticamente sin necesidad de intervención manual.
+- **Consistencia de datos**: Ayudan a mantener la integridad y consistencia de los datos, asegurando que ciertas reglas de negocio se cumplan.
+- **Reducción de código en la aplicación**: Parte de la lógica de negocio se maneja directamente en la base de datos.
+
+¿Tipos de triggers?
+
+Los triggers se clasifican principalmente por el tipo de evento que los activa y el momento en que se ejecutan:
+  - `INSERT`: Cuando se insertan datos.
+  - `UPDATE`: Cuando se actualizan datos.
+  - `DELETE`: Cuando se eliminan datos.
+
+  - `BEFORE`: Se ejecuta **antes** de que ocurra el evento (puede cancelar o modificar la acción).
+  - `AFTER`: Se ejecuta **después** de que ocurra el evento (por ejemplo, para auditoría).
+
+¿En qué casos NO son de utilidad?
+
+Aunque los triggers pueden ser muy útiles, hay situaciones en las que no se recomienda su uso:
+- **Complejidad innecesaria**: Si se abusa de ellos, el sistema se vuelve difícil de mantener y depurar.
+- **Dependencias ocultas**: Pueden generar efectos colaterales que no se ven directamente en la aplicación.
+- **Uso como reemplazo de lógica de negocio**: No deben usarse para sustituir completamente la lógica que debería estar en el backend o aplicación.
